@@ -4,7 +4,7 @@ RUN apk add --no-cache vsftpd
 COPY ["vsftpd.conf", "/etc/vsftpd/vsftpd.conf"]
 COPY ["entrypoint.sh", "/"]
 
-EXPOSE 20/tcp 
 EXPOSE 21/tcp 
+EXPOSE 21100-21110/tcp
 
 ENTRYPOINT ["/entrypoint.sh"]
