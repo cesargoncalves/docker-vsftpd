@@ -22,6 +22,10 @@ chmod 775 '/_/data'
 [ -z "${PASS}" ] && PASS=abc
 echo "${USER}:${PASS}" | /usr/sbin/chpasswd
 
+##ADD PASV_ADDRESS
+[ -z "${PASV_ADDRESS}" ] && PASV_ADDRESS="127.0.0.1"
+echo "pasv_address=${PASV_ADDRESS}" >> /etc/vsftpd/vsftpd.conf
+
 echo '
 -------------------------------------'
 echo "
