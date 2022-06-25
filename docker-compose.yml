@@ -1,0 +1,17 @@
+---
+version: '3'
+
+services:
+  ftp:
+    image: cesargoncalves/vsftpd:latest
+    container_name: ftp
+    environment:
+      - USER=user
+      - PASS=password
+      - PASV_ADDRESS='172.16.0.131'
+    volumes:
+      - /home/cmg/ftp:/data
+    ports:
+      - 21:21
+      - '21100-21110:21100-21110'
+    restart: unless-stopped
