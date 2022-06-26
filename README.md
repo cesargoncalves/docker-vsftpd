@@ -23,7 +23,7 @@ docker run -it --rm -p 21:21 -p 21100-21110:21100-21110 \
   -e PASV_ADDRESS='172.16.0.10' \
   -v /mnt/ftp:/_/data \
   -v ~/certs/:/etc/ssl/private/
-  local/vsftpd:latest /bin/sh
+  cesargoncalves/docker-vsftpd:latest /bin/sh
 ```
 
 default user:pass -> abc:abc  
@@ -39,7 +39,7 @@ docker run -it --rm -p 21:21 -p 21100-21110:21100-21110 \
   -e PASS=ftp
   -v /mnt/ftp:/_/data \
   -v ~/certs/:/etc/ssl/private/
-  local/vsftpd:latest /bin/sh
+  cesargoncalves/docker-vsftpd:latest /bin/sh
 ```
 
 ### iptables rules required (only if you use iptables)
