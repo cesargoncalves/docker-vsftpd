@@ -33,10 +33,10 @@ default PUID:PGID -> 1000:1000
 ```bash
 docker run -it --rm -p 21:21 -p 21100-21110:21100-21110 \
   -e PASV_ADDRESS='172.16.0.10' \
-  -e PUID=1001
-  -e PGID=1001
-  -e USER=ftp
-  -e PASS=ftp
+  -e PUID=1001 \
+  -e PGID=1001 \
+  -e USER=ftp \
+  -e PASS=ftp \
   -v /mnt/ftp:/_/data \
   -v ~/certs/:/etc/ssl/private/ \
   cesargoncalves/docker-vsftpd:latest /bin/sh
