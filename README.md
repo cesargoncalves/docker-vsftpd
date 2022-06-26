@@ -22,7 +22,7 @@ openssl req -x509 -newkey rsa:4096 -nodes -subj "/C=US/ST=Oregon/L=Portland/O=Co
 docker run -it --rm -p 21:21 -p 21100-21110:21100-21110 \
   -e PASV_ADDRESS='172.16.0.10' \
   -v /mnt/ftp:/_/data \
-  -v ~/certs/:/etc/ssl/private/
+  -v ~/certs/:/etc/ssl/private/ \
   cesargoncalves/docker-vsftpd:latest /bin/sh
 ```
 
@@ -38,7 +38,7 @@ docker run -it --rm -p 21:21 -p 21100-21110:21100-21110 \
   -e USER=ftp
   -e PASS=ftp
   -v /mnt/ftp:/_/data \
-  -v ~/certs/:/etc/ssl/private/
+  -v ~/certs/:/etc/ssl/private/ \
   cesargoncalves/docker-vsftpd:latest /bin/sh
 ```
 
