@@ -25,6 +25,7 @@ echo "${USER}:${PASS}" | /usr/sbin/chpasswd
 ##ADD PASV_ADDRESS
 [ -z "${PASV_ADDRESS}" ] && PASV_ADDRESS="127.0.0.1"
 echo "pasv_address=${PASV_ADDRESS}" >> /etc/vsftpd/vsftpd.conf
+[ ! -z "${PASV_ADDR_RESOLVE}" ] && echo "pasv_addr_resolve=${PASV_ADDR_RESOLVE}" >> /etc/vsftpd/vsftpd.conf
 
 echo '
 -------------------------------------'
@@ -37,6 +38,8 @@ User gid:   $(id -g ${USER})
 -------------------------------------
 Starting vsftpd service
 "
+
+/usr/sbin/vsftpd -version
 
 ##SHOW LOGS IN STDOUT
 touch /var/log/vsftpd.log

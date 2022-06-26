@@ -1,5 +1,5 @@
-FROM alpine:3.14
-RUN apk add --no-cache vsftpd
+FROM alpine:3.13
+RUN apk add --no-cache vsftpd=3.0.3-r6
 
 COPY ["vsftpd.conf", "/etc/vsftpd/vsftpd.conf"]
 COPY ["entrypoint.sh", "/"]
